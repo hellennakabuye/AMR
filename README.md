@@ -7,3 +7,5 @@ The fasta.sh contains shell/bash script that analyses the input fasta file in 4 
 The views.py file contains the preprocessing code for the input fasta file using SeqIO of Biopython and then analyses the results of the fasta.sh script to output a PDF file of the results.
 
 The results file contains the AMR genes found, plus the antibiotics they infer resistance to.
+
+For any queries or improvements: hellennakabuye23@gmail.com
