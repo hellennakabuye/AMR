@@ -60,14 +60,14 @@ def sequence_extract_fasta(fasta_file):
 def fasta_files(sequence):
     code = subprocess.run('myapp/fasta.sh', shell=True)
 
-    file = pd.read_table('/home/nakabuye/Desktop/AMR_APP/webapp/media/myfiles')
+    file = pd.read_table('/webapp/media/myfiles')
     df = pd.DataFrame(file)
     print(df.shape)
     # print(df.head(5))
     result = df['RESISTANCE']
     sample = df.iloc[0,0]
 
-    with open('/home/nakabuye/Desktop/AMR_APP/webapp/media/results.txt', 'w') as f:
+    with open('/webapp/media/results.txt', 'w') as f:
         for word in result:
             f.write(word)
             f.write('\n')
@@ -82,10 +82,10 @@ def fasta_files(sequence):
     pdf.cell(200, 10, txt="Antibiotic resistance Found FOR THESE DRUGS:",
              ln=1, align='L')
     pdf.cell(200, 10, txt=sample, ln=1, align='C')
-    f = open("/home/nakabuye/Desktop/AMR_APP/webapp/media/results.txt", "r")
+    f = open("/webapp/media/results.txt", "r")
     for x in f:
         pdf.cell(200, 10, txt=x, ln=1, align='L')
 
-    report = pdf.output("/home/nakabuye/Desktop/pilot.pdf")
+    report = pdf.output("/pilot.pdf")
     return code, report, result
 
